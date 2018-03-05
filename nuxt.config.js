@@ -10,10 +10,16 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  css: ['~assets/css/main.css', 'highlight.js/styles/github.css'],
+  css: ['~assets/css/main.css', 'highlight.js/styles/github.css','element-ui/lib/theme-chalk/index.css'],
   loading: { color: '#337AB7' },
+  babel: {
+    plugins: [['component', [{
+      libraryName: 'element-ui',
+      styleLibraryName: 'theme-default'
+    }]]]
+  },
   build: {
-    vendor: ['axios'],
+    vendor: ['axios','element-ui'],
     postcss: [
       require('postcss-import')(),
       require('postcss-url')(),
@@ -36,5 +42,5 @@ module.exports = {
     theme_color: '#000'
   },
   modules: ['@nuxtjs/pwa'],
-  plugins: ['~/plugins/components.js', '~/plugins/filters.js']
+  plugins: ['~/plugins/components.js', '~/plugins/filters.js','~/plugins/element-ui']
 }
