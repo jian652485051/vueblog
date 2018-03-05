@@ -41,6 +41,12 @@ div {
   box-sizing: border-box;
 }
 
+/* code {
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+} */
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity .5s;
@@ -148,6 +154,9 @@ button {
 }
 
 .tags {
+  & .tags-list {
+    padding: 15px;
+  }
   & .tag {
     border: 1px solid #3d4045;
     display: inline-block;
