@@ -1,12 +1,15 @@
 <template>
   <div class="list">
-    <ul class="list-list">
-      <li class="list-item" v-for="(article, index) in articles" :key="index">
-        <p class="item-title">
-          <nuxt-link class="title-link" :to="'/detail/' + article.id">{{ article.title }}</nuxt-link>
-        <p class="item-content">{{ article.content | cutString(180) }}</p>
-      </li>
-    </ul>
+
+  <el-card class="box-card" v-for="(article, index) in articles" :key="index">
+    <div slot="header" class="clearfix">
+      <span><nuxt-link class="title-link" :to="'/detail/' + article.id">{{ article.title }}</nuxt-link></span>
+    </div>
+    <div class="text">
+      {{ article.content | cutString(180) }}
+    </div>
+  </el-card>
+
   </div>
 </template>
 <script>
@@ -21,26 +24,10 @@ export default {
 
 </script>
 <style lang="postcss">
-.list {
-  & .list-list {
-    & .list-item {
-      border-top: 1px dashed #e4e4e4;
-      list-style-type: none;
-      & .item-title {
-        padding: 15px;
-        font-size: 17px;
-        & a:hover {
-          text-decoration: underline;
-        }
-      }
-      & .item-content {
-        padding: 0 15px 15px;
-      }
-      &:nth-child(1) {
-        border-top: none;
-      }
-    }
-  }
-}
-
+.list { padding-bottom:20px;}
+.text { font-size: 14px; }
+.item { margin-bottom: 18px; }
+.clearfix:before,  .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both }
+.box-card { width: auto; margin:15px 15px 0;}
 </style>

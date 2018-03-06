@@ -1,13 +1,15 @@
 <template>
   <div class="archives container">
-    <div class="archive" v-for="(archive, index) in archives" :key="index">
-      <p class="archive-date">{{ archive.date }}({{ archive.total }})</p>
-      <ul>
-        <li class="archive-title" v-for="(article, index) in archive.articles" :key="index">
-          <nuxt-link :to="'/detail/'+article.id">{{ article.title }}</nuxt-link>
-        </li>
-      </ul>
-    </div>
+
+    <el-card class="box-card" v-for="(archive, index) in archives" :key="index">
+      <div slot="header" class="clearfix">
+        <span>{{ archive.date }}({{ archive.total }})</span>
+      </div>
+      <div v-for="(article, index) in archive.articles" :key="index" class="text item">
+        <nuxt-link :to="'/detail/'+article.id">{{ article.title }}</nuxt-link>
+      </div>
+    </el-card>
+
   </div>
 </template>
 <script>
@@ -27,3 +29,12 @@ export default {
 }
 
 </script>
+
+<style lang="postcss">
+.list { padding-bottom:20px;}
+.text { font-size: 14px; }
+.item { margin-bottom: 18px; }
+.clearfix:before,  .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both }
+.box-card { width: auto; margin:15px 0 0;}
+</style>

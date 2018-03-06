@@ -73,6 +73,11 @@ export default {
           path: '/admin/publish',
           routerName: 'admin-publish-id',
           name: '新随笔'
+        },
+        {
+          path: '/about',
+          routerName: 'about',
+          name: '关于'
         }
       ]
     }
@@ -94,6 +99,9 @@ export default {
         }
       })
     }
+  },
+  created(){
+    //console.log('ok')
   }
 }
 

@@ -5,9 +5,7 @@
     </template>
     <template v-else>
       <div class="tags-list">
-        <p class="tag" v-for="(tag, index) in tags" :key="index">
-          <nuxt-link :to="'/tags/'+ tag.id">{{ tag.name }}</nuxt-link>
-        </p>
+        <el-tag v-for="(tag, index) in tags" :key="index"><nuxt-link :to="'/tags/'+ tag.id">{{ tag.name }}</nuxt-link></el-tag>
       </div>
     </template>
   </div>
@@ -44,3 +42,6 @@ export default {
 }
 
 </script>
+<style>
+  .el-tag { margin-right:10px; }
+</style>
