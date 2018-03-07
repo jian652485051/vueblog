@@ -31,10 +31,14 @@ export default {
 </script>
 
 <style lang="postcss">
-.list { padding-bottom:20px;}
-.text { font-size: 14px; }
-.item { margin-bottom: 18px; }
 .clearfix:before,  .clearfix:after { display: table; content: ""; }
 .clearfix:after { clear: both }
-.box-card { width: auto; margin:15px 0 0;}
+.archives {
+  & .box-card { 
+    width: auto; 
+    margin:15px 0 0;
+    & .text { font-size: 14px; }
+    & .item { margin-bottom: 18px; }
+  }
+}
 </style>

@@ -24,10 +24,24 @@ export default {
 
 </script>
 <style lang="postcss">
-.list { padding-bottom:20px;}
-.text { font-size: 14px; }
-.item { margin-bottom: 18px; }
-.clearfix:before,  .clearfix:after { display: table; content: ""; }
-.clearfix:after { clear: both }
-.box-card { width: auto; margin:15px 15px 0;}
+.clearfix:before,.clearfix:after { 
+  display: table; 
+  content: ""; 
+}
+.clearfix:after { 
+  clear:both 
+}
+.list { 
+  padding-bottom:20px;
+  & .text { 
+    font-size:14px; 
+  }
+  & .item { 
+    margin-bottom:18px; 
+  }
+  & .box-card { 
+    width:auto; 
+    margin:15px 15px 0;
+  }
+}
 </style>
