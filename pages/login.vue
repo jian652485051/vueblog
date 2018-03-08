@@ -1,7 +1,7 @@
 <template>
   <div class="login container">
     <el-input v-model="user.username" placeholder="用户名"></el-input>
-    <el-input v-model="user.password" placeholder="密码" type="password" @keyup.enter="login"></el-input>
+    <el-input v-model="user.password" placeholder="密码" type="password" @keyup.enter.native="login"></el-input>
     <el-button type="primary" @click="login">登 录</el-button>
     <Tip ref="tip"></Tip>
   </div>

@@ -1,8 +1,8 @@
 <template>
   <div class="admin-tags container">
     <div class="tags-input" v-if="isEdit">
-      <input type="text" @keyup.enter="edit" v-model="tag.name">
-      <button class="black-button" @click="edit">确认修改</button>
+      <el-input v-model="tag.name" @keyup.enter.native="edit"></el-input>
+      <el-button type="primary" @click="edit">登 录</el-button>
     </div>
     <ul class="tags-list">
       <li class="list-item" v-for="(tag, index) in tags" :key="index">
@@ -70,3 +70,12 @@ export default {
 }
 
 </script>
+<style lang="postcss">
+.tags-input {
+  & .el-input { width:200px; margin-right:15px;}
+  & .el-input,
+  & .el-button {
+     vertical-align:top;
+  }
+}
+</style>

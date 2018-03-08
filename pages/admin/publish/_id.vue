@@ -1,19 +1,19 @@
 <template>
   <div class="admin-publish container">
     <div class="publish-title">
-      <input type="text" placeholder="文章标题" v-model="article.title">
+      <el-input v-model="article.title" placeholder="文章标题"></el-input>
     </div>
     <div class="publish-content">
       <top-editor v-model="article.content" :upload="upload" :options="options" @save="save"></top-editor>
     </div>
     <div class="publish-handle">
-      <input type="text" placeholder="回车可创建新标签" v-model="tag" @keyup.enter="addTag">
+      <el-input v-model="tag" placeholder="回车可创建新标签" @keyup.enter.native="addTag"></el-input>
       <ul class="handle-tag">
         <li v-for="(item, index) in article.tags" :key="index"> {{ item.name }} <span @click="delTag(item, index)">&times;</span></li>
       </ul>
       <div class="handle-button">
-        <button class="button-private" @click="publish(false)">存草稿</button>
-        <button class="black-button" @click="publish(true)">发布</button>
+        <el-button type="info" @click="publish(false)">存草稿</el-button>
+        <el-button type="primary" @click="publish(true)">发布</el-button>
       </div>
     </div>
     <div class="publish-tags">

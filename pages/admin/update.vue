@@ -2,17 +2,17 @@
   <div class="admin-update container">
     <div class="update-info">
       <h4>修改个人信息</h4>
-      <input type="text" v-model="user.nickname">
-      <input type="text" v-model="user.motto">
-      <input type="text" v-model="user.email">
-      <button @click="updateInfo">确认修改</button>
+      <el-input v-model="user.nickname"></el-input>
+      <el-input v-model="user.motto"></el-input>
+      <el-input v-model="user.email"></el-input>
+      <el-button type="primary" @click="updateInfo">确认修改</el-button>
     </div>
     <div class="update-password">
       <h4>修改密码</h4>
-      <input type="password" v-model="oldPassword" placeholder="输入旧密码">
-      <input type="password" v-model="newPassword" placeholder="输入新密码">
-      <input type="password" v-model="vertifyPassword" placeholder="再次输入新密码">
-      <button @click="updatePassword">确认修改</button>
+      <el-input v-model="oldPassword" placeholder="输入旧密码"></el-input>
+      <el-input v-model="newPassword" placeholder="输入新密码"></el-input>
+      <el-input v-model="vertifyPassword" placeholder="再次输入新密码"></el-input>
+      <el-button type="primary" @click="updatePassword">确认修改</el-button>
     </div>
     <Tip ref="tip"></Tip>
   </div>
