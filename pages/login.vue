@@ -1,8 +1,8 @@
 <template>
   <div class="login container">
-    <input type="text" class="login-username" placeholder="用户名" autocomplete="off" v-model="user.username">
-    <input type="password" class="login-password" placeholder="密码" autocomplete="off" v-model="user.password" @keyup.enter="login">
-    <button class="login-button" @click="login">登 录</button>
+    <el-input v-model="user.username" placeholder="用户名"></el-input>
+    <el-input v-model="user.password" placeholder="密码" type="password" @keyup.enter="login"></el-input>
+    <el-button type="primary" @click="login">登 录</el-button>
     <Tip ref="tip"></Tip>
   </div>
 </template>
@@ -30,3 +30,17 @@ export default {
   }
 }
 </script>
+<style lang="postcss">
+.login { 
+  max-width:400px; 
+  margin-left:auto; 
+  margin-right:auto;
+  & .el-input {
+    margin-bottom:15px;
+  }
+  & .el-button {
+    display:block;
+    width:100%;
+  }
+}
+</style>

@@ -14,7 +14,7 @@
       </li>
     </ul>
     <div class="nav-search">
-      <input type="search" placeholder="回车搜索" @keyup.enter="search" v-model="keyword">
+      <el-input v-model="keyword" placeholder="回车搜索" @keyup.enter.native="search" clearable></el-input>
     </div>
   </nav>
 </template>
