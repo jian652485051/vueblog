@@ -25,6 +25,11 @@ export default {
         archives: []
       }
     }
+  },
+  head () {
+    return {
+      title: '归档 - VueBlog'
+    }
   }
 }
 

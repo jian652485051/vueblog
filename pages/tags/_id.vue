@@ -36,6 +36,11 @@ export default {
       }
     }
   },
+  head () {
+    return {
+      title: '标签 - VueBlog'
+    }
+  },
   components: {
     List
   }
